@@ -1,0 +1,72 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../images/Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fade-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.fade-out.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+span {
+    display: inline-block;
+    width: 16ch;
+    font: bold 200% Consolas, Monaco, monospace;
+    /*等宽字体*/
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+    border-right: 1px solid transparent;
+    animation: typing 1.5s steps(16), caret .3s steps(1);
+    color: #EBD9B4;
+    margin-bottom: 50px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes caret {
+    50% {
+        border-right-color: currentColor
+    }
+
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 200px;
+    transition: text-shadow 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    background-color: #638889;
+    z-index: 1;
+}
+
+button:hover {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #638889;
+    /* 添加模糊文字效果 */
+}
