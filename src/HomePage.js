@@ -8,7 +8,7 @@ import changeLanguageSound from './sounds/change-language.mp3';
 import { useLanguage } from './LanguageProvider';
 import Footer from './Footer';
 import Banner from './Banner';
-import startIcon from './icons/Start.png';
+import startIcon from './icons/start.png';
 import continueIcon from './icons/continue.png';
 import languageIcon from './icons/language.png';
 import selectIcon from './icons/select.png';
@@ -74,40 +74,40 @@ function HomePage() {
 
     return (
         <div className="home-page">
-            <Banner/>
+            <Banner />
 
             <div className='mainPart'>
 
-            
-            <span>Smart Programmer</span> 
 
-            <button onClick={startGame}>
-                <img src={startIcon} alt="Start"/>
-                {translate('start')}
-            </button>
+                <span>Smart Programmer</span>
 
-            <button onClick={continueGame}>
-                <img src={continueIcon} alt="Continue"/>         
-                {translate('continue')}
-            </button>
+                <button onClick={startGame}>
+                    <img src={startIcon} alt="Start" />
+                    {translate('start')}
+                </button>
 
-            <button onClick={selectLevel}>
-                <img src={selectIcon} alt="Select"/>  
-                {translate('selectLevels')}
-            </button>
+                <button onClick={continueGame}>
+                    <img src={continueIcon} alt="Continue" />
+                    {translate('continue')}
+                </button>
 
-            <button onClick={changeLanguage}> 
-                <img src={languageIcon} alt="Language"/>  
-                {translate('languages')}
-            </button>
-            <audio ref={startSoundRef} />
-            <audio ref={continueSoundRef} />
-            <audio ref={selectLevelSoundRef} />
-            <audio ref={changeLanguageSoundRef} />
-            <div className={`fade-out ${fadeOut ? 'active' : ''}`} />
+                <button onClick={selectLevel}>
+                    <img src={selectIcon} alt="Select" />
+                    {translate('selectLevels')}
+                </button>
+
+                <button onClick={changeLanguage}>
+                    <img src={languageIcon} alt="Language" />
+                    {translate('languages')}
+                </button>
+                <audio ref={startSoundRef} />
+                <audio ref={continueSoundRef} />
+                <audio ref={selectLevelSoundRef} />
+                <audio ref={changeLanguageSoundRef} />
+                <div className={`fade-out ${fadeOut ? 'active' : ''}`} />
             </div>
-            
-            <Footer/>
+
+            <Footer />
         </div>
     );
 
