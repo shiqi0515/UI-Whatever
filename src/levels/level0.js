@@ -3,7 +3,6 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import Banner from '../Banner';
-=======
 import '../style/level0.css';
 import mapImage from '../images/map.png';
 import waterBottleImage from '../images/watercup.png';
@@ -123,22 +122,22 @@ function Level0() {
     return (
         <DndProvider backend={HTML5Backend}>
 
-            <Banner/>
+            <Banner />
             <div>
                 <h1>Tutorial</h1>
 
-            <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
-                    <h2>Items</h2>
-                    <ItemBox items={items} onDrop={handlePickup} itemsInDestination={itemsInDestination} />
-                </div>
-                <div style={{ flex: 1, padding: '10px' }}>
-                    <h2>Map</h2>
-                    <Map destinations={['path', 'desert']} onDrop={handlePickup} />
-                    <p>{actionMessage}</p>
-                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
+                        <h2>Items</h2>
+                        <ItemBox items={items} onDrop={handlePickup} itemsInDestination={itemsInDestination} />
+                    </div>
+                    <div style={{ flex: 1, padding: '10px' }}>
+                        <h2>Map</h2>
+                        <Map destinations={['path', 'desert']} onDrop={handlePickup} />
+                        <p>{actionMessage}</p>
+                    </div>
 
-            </div>
+                </div>
         </DndProvider>
     );
 }
