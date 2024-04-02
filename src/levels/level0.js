@@ -123,21 +123,20 @@ function Level0() {
         <DndProvider backend={HTML5Backend}>
 
             <Banner />
-            <div>
-                <h1>Tutorial</h1>
+            <h1>Tutorial</h1>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
-                        <h2>Items</h2>
-                        <ItemBox items={items} onDrop={handlePickup} itemsInDestination={itemsInDestination} />
-                    </div>
-                    <div style={{ flex: 1, padding: '10px' }}>
-                        <h2>Map</h2>
-                        <Map destinations={['path', 'desert']} onDrop={handlePickup} />
-                        <p>{actionMessage}</p>
-                    </div>
-
+            <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
+                    <h2>Items</h2>
+                    <ItemBox items={items} onDrop={handlePickup} itemsInDestination={itemsInDestination} />
                 </div>
+                <div style={{ flex: 1, padding: '10px' }}>
+                    <h2>Map</h2>
+                    <Map destinations={['path', 'desert']} onDrop={handlePickup} />
+                    <p>{actionMessage}</p>
+                </div>
+
+            </div>
         </DndProvider>
     );
 }
