@@ -36,14 +36,14 @@ const translations = {
     //     back: "Zurück",
     //     play: "Spielen",
     // },
-    // sv: {
-    //     start: "Starta spel",
-    //     continue: "Fortsätt",
-    //     selectLevels: "Välj nivåer",
-    //     languages: "Språk",
-    //     back: "Tillbaka",
-    //     play: "Spela",
-    // },
+    sv: {
+        start: "Starta spel",
+        continue: "Fortsätt",
+        selectLevels: "Välj nivåer",
+        languages: "Språk",
+        back: "Tillbaka",
+        play: "Spela",
+    },
 };
 const LanguageContext = createContext();
 
