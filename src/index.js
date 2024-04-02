@@ -4,7 +4,6 @@ import './style/index.css';
 import App from './App';
 import { LanguageProvider } from './LanguageProvider';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -13,4 +12,3 @@ root.render(
     </LanguageProvider>
   </React.StrictMode>
 );
-

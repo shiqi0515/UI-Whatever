@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import './style/selectionLevels.css';
 import { useLanguage } from './LanguageProvider';
 import Header from './Header';

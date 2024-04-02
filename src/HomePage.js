@@ -70,7 +70,6 @@ function HomePage() {
     };
 
 
-
     const { translate } = useLanguage(); // Use the hook here
 
     return (
@@ -111,7 +110,6 @@ function HomePage() {
             <Footer/>
         </div>
     );
-
 
 };
 
