@@ -63,7 +63,6 @@ function HomePage() {
     };
 
 
-
     const { translate } = useLanguage(); // Use the hook here
 
     return (
@@ -80,7 +79,6 @@ function HomePage() {
             <div className={`fade-out ${fadeOut ? 'active' : ''}`} />
         </div>
     );
-
 
 };
 
