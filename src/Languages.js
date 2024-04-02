@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style/languages.css';
 import englishImage from './images/English.jpg';
 import chineseImage from './images/Chinese.png';
@@ -13,7 +13,7 @@ const languages = [
     { id: 1, name: 'Chinese', image: chineseImage, code: 'zh' },
     // { id: 2, name: 'French', image: frenchImage, code: 'fr' },
     // { id: 3, name: 'German', image: germanImage, code: 'de' },
-    { id: 2, name: 'Swedish', image: swedishImage, code: 'sv' },
+    // { id: 4, name: 'Swedish', image: swedishImage, code: 'sv' },
 ];
 
 const LanguageCard = ({ language }) => {

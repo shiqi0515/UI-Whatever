@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style/selectionLevels.css';
 import { useLanguage } from './LanguageProvider';
 import Header from './Header';
