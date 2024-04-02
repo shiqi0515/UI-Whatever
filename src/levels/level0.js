@@ -3,7 +3,6 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import Banner from '../Banner';
-=======
 import '../style/level0.css';
 import mapImage from '../images/map.png';
 import waterBottleImage from '../images/watercup.png';
@@ -123,9 +122,8 @@ function Level0() {
     return (
         <DndProvider backend={HTML5Backend}>
 
-            <Banner/>
-            <div>
-                <h1>Tutorial</h1>
+            <Banner />
+            <h1>Tutorial</h1>
 
             <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
