@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './style/selectionLevels.css';
 import { useLanguage } from './LanguageProvider';
+import Header from './Header';
 
 
 const levels = [
@@ -46,23 +47,14 @@ const LevelCard = ({ level }) => {
 
 function SelectionLevels() {
     const { translate } = useLanguage(); // Use the hook here
-    const [fadeOut, setFadeOut] = useState(false);
-    const handleBackClick = () => {
-        setFadeOut(true);
-        setTimeout(() => {
-            window.history.back();
-        }, 800);
-    };
     return (
         <div>
-            <button onClick={handleBackClick} class='back-button'>{translate('back')}</button>
-            <h1>{translate('levels')}</h1>
+            <Header title={translate('levels')} />
             <div className="levels-container">
                 {levels.map(level => (
                     <LevelCard key={level.id} level={level} />
                 ))}
             </div>
-            <div className={`fade-out ${fadeOut ? 'active' : ''}`} />
         </div>
     );
 }

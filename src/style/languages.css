@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url(../images/Background.jpg);
+    background-color:#000000 ;
     background-size: cover;
 }
-
+/* 
 .fade-out {
     position: fixed;
     top: 0;
@@ -18,22 +18,7 @@ body {
 .fade-out.active {
     opacity: 1;
     z-index: 2;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    text-align: center;
-    color: #9CAFAA;
-}
-
-
-.back-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
+} */
 
 .languages-container {
     display: flex;
