@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+
+import Banner from '../Banner';
+=======
 import '../style/level0.css';
 import mapImage from '../images/map.png';
 import waterBottleImage from '../images/watercup.png';
@@ -91,6 +94,7 @@ function Map({ destinations, onDrop }) {
     );
 }
 
+
 function Level0() {
     const [heldItem, setHeldItem] = useState(null);
     const [chosenDestination, setChosenDestination] = useState(null);
@@ -118,6 +122,11 @@ function Level0() {
 
     return (
         <DndProvider backend={HTML5Backend}>
+
+            <Banner/>
+            <div>
+                <h1>Tutorial</h1>
+
             <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div style={{ width: '20%', padding: '10px', borderRight: '2px solid gray' }}>
                     <h2>Items</h2>
@@ -128,6 +137,7 @@ function Level0() {
                     <Map destinations={['path', 'desert']} onDrop={handlePickup} />
                     <p>{actionMessage}</p>
                 </div>
+
             </div>
         </DndProvider>
     );
