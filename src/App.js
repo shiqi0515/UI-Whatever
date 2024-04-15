@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/level0" element={<Level0 />} />
-        <Route path="/level0" element={<Level0 />} />
         <Route path="/selectionLevels" element={<SelectionLevels />} />
         <Route path="/selectLanguages" element={<Languages />} />
       </Routes>
