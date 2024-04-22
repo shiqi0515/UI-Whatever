@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
         startSoundRef.current?.play();
         setFadeOut(true);
         setTimeout(() => {
-          navigate("");
+          navigate("/tutorialLevel");
         }, 800);
       };
     }
@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
         continueSoundRef.current?.play();
         setFadeOut(true);
         setTimeout(() => {
-          navigate("");
+          navigate("/tutorialLevel");
         }, 800);
       };
     }
