@@ -17,6 +17,7 @@ const translations: Translations = {
     back: "Back",
     levels: "Levels",
     play: "Play",
+    tutorial: "Tutorial",
     // other translations...
   },
 
@@ -26,7 +27,9 @@ const translations: Translations = {
     selectLevels: "选择关卡",
     languages: "切换语言",
     back: "返回",
+    levels: "关卡",
     play: "进入",
+    tutorial: "教程",
   },
   // fr: {
   //     start: "Démarrer le jeu",

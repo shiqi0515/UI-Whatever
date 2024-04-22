@@ -120,6 +120,11 @@ const LevelCard: React.FC<LevelCardProps> = ({ level }) => {
 
 function SelectionLevels() {
   const { translate } = useLanguage(); // Use the hook here
+
+  const translatedLevels = levels.map((level) => ({
+    ...level,
+    name: level.name === "Tutorial" ? translate("tutorial") : level.name,
+  }));
   return (
     <div>
       <Header title={translate("levels")} />
