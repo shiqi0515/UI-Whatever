@@ -17,73 +17,73 @@ interface LevelCardProps {
 const levels: Level[] = [
   {
     id: 0,
-    name: "Tutorial",
+    name: "tutorial",
     difficulty: "0",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 1,
-    name: "If",
+    name: "if",
     difficulty: "1",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 2,
-    name: "While",
+    name: "while",
     difficulty: "1",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 3,
-    name: "For loop",
+    name: "for_loop",
     difficulty: "2",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 4,
-    name: "Switch",
+    name: "switch",
     difficulty: "2",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 5,
-    name: "Linear list",
+    name: "linear_list",
     difficulty: "3",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 6,
-    name: "Array",
+    name: "array",
     difficulty: "3",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 7,
-    name: "Linked list",
+    name: "linked_list",
     difficulty: "4",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 8,
-    name: "Stack",
+    name: "stack",
     difficulty: "4",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 9,
-    name: "Queue",
+    name: "queue",
     difficulty: "4",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 10,
-    name: "Tree",
+    name: "tree",
     difficulty: "5",
     image: "https://via.placeholder.com/300",
   },
   {
     id: 11,
-    name: "Graph",
+    name: "graph",
     difficulty: "5",
     image: "https://via.placeholder.com/300",
   },
@@ -123,13 +123,13 @@ function SelectionLevels() {
 
   const translatedLevels = levels.map((level) => ({
     ...level,
-    name: level.name === "Tutorial" ? translate("tutorial") : level.name,
+    name: translate(level.name),
   }));
   return (
     <div>
       <Header title={translate("levels")} />
       <div className="levels-container">
-        {levels.map((level) => (
+        {translatedLevels.map((level) => (
           <LevelCard key={level.id} level={level} />
         ))}
       </div>
