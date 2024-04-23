@@ -82,11 +82,11 @@ const TutorialLevel: React.FC = () => {
       <Header title={translate("tutorial")} />
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>游戏胜利！</Modal.Title>
+          <Modal.Title>Win！</Modal.Title>
         </Modal.Header>
-        <Modal.Body>恭喜你完成了这一关！</Modal.Body>
+        <Modal.Body>Congratulations！</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary">下一关</Button>
+          <Button variant="primary">Next level</Button>
         </Modal.Footer>
       </Modal>
       <Player
