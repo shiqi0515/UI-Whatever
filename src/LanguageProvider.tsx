@@ -30,7 +30,7 @@ const translations: Translations = {
     tree: "Tree",
     graph: "Graph",
     ruleTutorial:
-      "Rules of the game: Drop the basketball to the red square, then move the player to the green square to win! Use the arrow keys to move the player and the basketball.",
+      "Rules of the game: Drop the basketball to the red square, then move the player to the green square to win! Use WSAD to move the player and J to drap and drop the basketball.",
     // other translations...
   },
 
@@ -54,6 +54,8 @@ const translations: Translations = {
     queue: "队列",
     tree: "树",
     graph: "图",
+    ruleTutorial:
+      "游戏规则：将篮球放到红色方块上，然后将玩家移动到绿色方块上即可获胜！使用WSAD移动玩家，按J键拖动篮球。",
   },
 
   sv: {
@@ -75,6 +77,8 @@ const translations: Translations = {
     queue: "Kö",
     tree: "Träd",
     graph: "Graf",
+    ruleTutorial:
+      "Spelets regler: Släpp basketbollen på den röda rutan, flytta sedan spelaren till den gröna rutan för att vinna! Använd WSAD för att flytta spelaren och J för att släppa och släppa basketbollen.",
   },
 };
 

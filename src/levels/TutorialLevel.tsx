@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap"; // 导入 Bootstrap 的 Modal 和 Button 组件
+import { Modal, Button } from "react-bootstrap";
 import Player from "../components/Player";
 import itemSprite from "../images/basketball.png";
 import "../style/tutorial.css";
@@ -8,15 +8,15 @@ import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
 
 const TutorialLevel: React.FC = () => {
-  const { translate } = useLanguage(); // Use the hook here
-  const targetX = 1500; // 目标区域的X坐标
-  const targetY = 600; // 目标区域的Y坐标
-  const goalX = 1000; // 篮球的目标X坐标
-  const goalY = 400; // 篮球的目标Y坐标
-  const [playerX, setPlayerX] = useState(100);
-  const [playerY, setPlayerY] = useState(100);
-  const [itemX, setItemX] = useState(200); // 物品的X坐标
-  const [itemY, setItemY] = useState(200); // 物品的Y坐标
+  const { translate } = useLanguage();
+  const targetX = 1500; // 人物目标区域X坐标
+  const targetY = 600; // 人物目标区域Y坐标
+  const goalX = 1000; // 篮球目标区域X坐标
+  const goalY = 400; // 篮球目标区域Y坐标
+  const [playerX, setPlayerX] = useState(100); // 人物X坐标
+  const [playerY, setPlayerY] = useState(100); // 人物Y坐标
+  const [itemX, setItemX] = useState(200); // 篮球X坐标
+  const [itemY, setItemY] = useState(200); // 篮球Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
   const [showModal, setShowModal] = useState(false);
