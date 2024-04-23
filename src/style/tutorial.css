@@ -1,0 +1,52 @@
+.container {
+    border: 1px solid black;
+}
+
+.player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
+
+.item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+}
+
+.goal {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    z-index: 1;
+}
+
+.target {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: green;
+    z-index: 1;
+}
+
+.win-message {
+    color: red;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.rules {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 2;
+}

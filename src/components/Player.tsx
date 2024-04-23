@@ -6,7 +6,7 @@ interface PlayerProps {
   x: number;
   y: number;
   updatePosition: (x: number, y: number) => void;
-  handlePickUpDropItem: () => void; // 新增属性
+  handlePickUpDropItem: () => void;
 }
 
 const frameSize = { width: 58.8, height: 58.8 };
@@ -81,6 +81,7 @@ const Player: React.FC<PlayerProps> = ({
             -frame.y * frameSize.height
           }px`,
           objectFit: "none",
+          zIndex: 2,
         }}
       />
     </div>

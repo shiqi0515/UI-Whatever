@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Player from "../components/Player";
 import itemSprite from "../images/basketball.png";
+import "../style/tutorial.css";
 
 const TutorialLevel: React.FC = () => {
   const targetX = 1500; // 目标区域的X坐标
   const targetY = 600; // 目标区域的Y坐标
+  const goalX = 1000; // 篮球的目标X坐标
+  const goalY = 400; // 篮球的目标Y坐标
   const [playerX, setPlayerX] = useState(100);
   const [playerY, setPlayerY] = useState(100);
   const [itemX, setItemX] = useState(200); // 物品的X坐标
   const [itemY, setItemY] = useState(200); // 物品的Y坐标
-  const [hasWon, setHasWon] = useState(false);
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
-  const [itemPosition, setItemPosition] = useState({ x: 0, y: 0 });
+  const [isWin, setIsWin] = useState(false);
 
   type ItemProps = {
     x: number;
@@ -27,26 +29,15 @@ const TutorialLevel: React.FC = () => {
           position: "absolute",
           left: `${x}px`,
           top: `${y}px`,
+          zIndex: 2,
         }}
       />
     );
   };
 
-  // 检查玩家是否到达目标区域
-  const checkWin = (x: number, y: number) => {
-    if (
-      x >= targetX &&
-      x <= targetX + 60 &&
-      y >= targetY &&
-      y <= targetY + 60
-    ) {
-      setHasWon(true);
-    }
-  };
-
   const handlePickUpDropItem = () => {
     const isNearItem =
-      Math.abs(playerX - itemX) <= 10 && Math.abs(playerY - itemY) <= 10;
+      Math.abs(playerX - itemX) <= 30 && Math.abs(playerY - itemY) <= 30;
     if (isNearItem || carryingItem) {
       setCarryingItem(!carryingItem);
     }
@@ -62,41 +53,42 @@ const TutorialLevel: React.FC = () => {
   };
 
   useEffect(() => {
-    if (carryingItem) {
-      setItemX(playerX); // 当携带物品时，更新物品的位置
-      setItemY(playerY); // 当携带物品时，更新物品的位置
+    // 检查篮球是否在红色方块上
+    const isItemOnTarget =
+      Math.abs(itemX - goalX) <= 40 && Math.abs(itemY - goalY) <= 40;
+    // 检查玩家是否在绿色方块上
+    const isPlayerOnGreen =
+      Math.abs(playerX - targetX) <= 40 && Math.abs(playerY - targetY) <= 40;
+    // 如果两个条件都满足，那么游戏获胜
+    if (isItemOnTarget && isPlayerOnGreen) {
+      setIsWin(true);
     }
-  }, [playerX, playerY, carryingItem]);
+  }, [itemX, itemY, playerX, playerY]);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "500px",
-        height: "500px",
-        border: "1px solid black",
-      }}
-    >
+    <div className="container">
       <Player
         x={playerX}
         y={playerY}
         updatePosition={updatePosition}
         handlePickUpDropItem={handlePickUpDropItem}
       />
-      {!carryingItem && <Item x={itemX} y={itemY} />}
+      <Item x={itemX} y={itemY} />
+      <div className="goal" style={{ left: `${goalX}px`, top: `${goalY}px` }} />
       <div
-        style={{
-          position: "absolute",
-          left: `${targetX}px`,
-          top: `${targetY}px`,
-          width: "100px",
-          height: "100px",
-          backgroundColor: "green",
-        }}
-      >
-        {/* 目标区域 */}
+        className="target"
+        style={{ left: `${targetX}px`, top: `${targetY}px` }}
+      />
+      {isWin && (
+        <div
+          style={{ color: "red", position: "absolute", top: "50", left: "50" }}
+        >
+          You've won!
+        </div>
+      )}
+      <div className="rules">
+        游戏规则：将篮球移动到红色方块上，然后将玩家移动到绿色方块上。
       </div>
-      {hasWon && <div style={{ color: "red" }}>You've won!</div>}
     </div>
   );
 };
