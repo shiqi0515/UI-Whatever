@@ -1,19 +1,18 @@
 .container {
     border: 1px solid black;
+    height: auto;
 }
 
 .player {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: blue;
 }
 
 .item {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: orange;
 }
 
 .goal {
@@ -40,13 +39,12 @@
 }
 
 .rules {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    position: relative;
+    top: 500px;
+    left: 200px;
     width: 200px;
-    height: 100px;
+    padding-bottom: 20px;
     background-color: white;
     border: 1px solid black;
     padding: 10px;
-    z-index: 2;
 }

@@ -29,6 +29,8 @@ const translations: Translations = {
     queue: "Queue",
     tree: "Tree",
     graph: "Graph",
+    ruleTutorial:
+      "Rules of the game: Drop the basketball to the red square, then move the player to the green square to win! Use the arrow keys to move the player and the basketball.",
     // other translations...
   },
 

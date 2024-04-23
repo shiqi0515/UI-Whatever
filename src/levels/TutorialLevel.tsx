@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Modal, Button } from "react-bootstrap"; // 导入 Bootstrap 的 Modal 和 Button 组件
 import Player from "../components/Player";
 import itemSprite from "../images/basketball.png";
 import "../style/tutorial.css";
+import Header from "../Header";
+import { useLanguage } from "../LanguageProvider";
+import winSound from "../sounds/success.mp3";
 
 const TutorialLevel: React.FC = () => {
+  const { translate } = useLanguage(); // Use the hook here
   const targetX = 1500; // 目标区域的X坐标
   const targetY = 600; // 目标区域的Y坐标
   const goalX = 1000; // 篮球的目标X坐标
@@ -14,6 +19,8 @@ const TutorialLevel: React.FC = () => {
   const [itemY, setItemY] = useState(200); // 物品的Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const winAudio = new Audio(winSound);
 
   type ItemProps = {
     x: number;
@@ -44,6 +51,7 @@ const TutorialLevel: React.FC = () => {
   };
 
   const updatePosition = (x: number, y: number) => {
+    if (isWin) return;
     setPlayerX(x);
     setPlayerY(y);
     if (carryingItem) {
@@ -62,11 +70,25 @@ const TutorialLevel: React.FC = () => {
     // 如果两个条件都满足，那么游戏获胜
     if (isItemOnTarget && isPlayerOnGreen) {
       setIsWin(true);
+      setShowModal(true);
+    }
+    if (isWin) {
+      winAudio.play(); // 当 isWin 变为 true 时，播放音频
     }
   }, [itemX, itemY, playerX, playerY]);
 
   return (
     <div className="container">
+      <Header title={translate("tutorial")} />
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>游戏胜利！</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>恭喜你完成了这一关！</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary">下一关</Button>
+        </Modal.Footer>
+      </Modal>
       <Player
         x={playerX}
         y={playerY}
@@ -86,9 +108,7 @@ const TutorialLevel: React.FC = () => {
           You've won!
         </div>
       )}
-      <div className="rules">
-        游戏规则：将篮球移动到红色方块上，然后将玩家移动到绿色方块上。
-      </div>
+      <div className="rules">{translate("ruleTutorial")}</div>
     </div>
   );
 };
