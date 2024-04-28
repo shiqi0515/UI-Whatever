@@ -7,6 +7,7 @@ import Header from "../Header";
 import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
 import closeIcon from "../icons/close.png";
+import SettingButton from "../SettingButton";
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -83,6 +84,7 @@ const TutorialLevel: React.FC = () => {
   return (
     <div className="container">
       <Header title={translate("tutorial")} />
+      <SettingButton />
       {showModal && <div className="backdrop" />}
       <Modal show={showModal} onHide={handleClose} className="custom-modal">
         <Modal.Header >
