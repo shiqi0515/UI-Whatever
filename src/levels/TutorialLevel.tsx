@@ -71,7 +71,6 @@ const TutorialLevel: React.FC = () => {
     const isPlayerOnGreen =
       Math.abs(playerX - targetX) <= 40 && Math.abs(playerY - targetY) <= 40;
     // 如果两个条件都满足，那么游戏获胜
-    handleShow();
     if (isItemOnTarget && isPlayerOnGreen) {
       setIsWin(true);
       handleShow();
