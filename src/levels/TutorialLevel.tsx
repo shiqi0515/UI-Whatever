@@ -21,6 +21,8 @@ const TutorialLevel: React.FC = () => {
   const [isWin, setIsWin] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const winAudio = new Audio(winSound);
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
   type ItemProps = {
     x: number;
@@ -70,7 +72,7 @@ const TutorialLevel: React.FC = () => {
     // 如果两个条件都满足，那么游戏获胜
     if (isItemOnTarget && isPlayerOnGreen) {
       setIsWin(true);
-      setShowModal(true);
+      handleShow();
     }
     if (isWin) {
       winAudio.play(); // 当 isWin 变为 true 时，播放音频
@@ -80,13 +82,14 @@ const TutorialLevel: React.FC = () => {
   return (
     <div className="container">
       <Header title={translate("tutorial")} />
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Win！</Modal.Title>
         </Modal.Header>
         <Modal.Body>Congratulations！</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary">Next level</Button>
+          <Button variant="primary" >Next level</Button>
+          <Button variant="primary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
       <Player
@@ -101,13 +104,6 @@ const TutorialLevel: React.FC = () => {
         className="target"
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
-      {isWin && (
-        <div
-          style={{ color: "red", position: "absolute", top: "50", left: "50" }}
-        >
-          You've won!
-        </div>
-      )}
       <div className="rules">{translate("ruleTutorial")}</div>
     </div>
   );
