@@ -6,6 +6,7 @@ import "../style/tutorial.css";
 import Header from "../Header";
 import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
+import closeIcon from "../icons/close.png";
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -70,6 +71,7 @@ const TutorialLevel: React.FC = () => {
     const isPlayerOnGreen =
       Math.abs(playerX - targetX) <= 40 && Math.abs(playerY - targetY) <= 40;
     // 如果两个条件都满足，那么游戏获胜
+    handleShow();
     if (isItemOnTarget && isPlayerOnGreen) {
       setIsWin(true);
       handleShow();
@@ -82,14 +84,17 @@ const TutorialLevel: React.FC = () => {
   return (
     <div className="container">
       <Header title={translate("tutorial")} />
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Win！</Modal.Title>
+      <Modal show={showModal} onHide={handleClose} className="custom-modal">
+        <Modal.Header >
+          <Modal.Title>Success!</Modal.Title>
+          <Button variant="link" onClick={handleClose} className="btn_close">
+          <img src={closeIcon} alt="Close" /> 
+          </Button>
         </Modal.Header>
-        <Modal.Body>Congratulations！</Modal.Body>
+        <Modal.Body>Congratulations!</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" >Next level</Button>
-          <Button variant="primary" onClick={handleClose}>Close</Button>
+          <Button className="modal_btn" variant="primary" >Next level</Button>
+          <Button className="modal_btn" variant="primary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
       <Player
