@@ -83,6 +83,7 @@ const TutorialLevel: React.FC = () => {
   return (
     <div className="container">
       <Header title={translate("tutorial")} />
+      {showModal && <div className="backdrop" />}
       <Modal show={showModal} onHide={handleClose} className="custom-modal">
         <Modal.Header >
           <Modal.Title>Success!</Modal.Title>
