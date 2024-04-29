@@ -26,7 +26,7 @@ body {
     position: relative;
     box-sizing: border-box;
     z-index: 2;
-    background-color: #b8b8b8;
+    background-color: #424769;
     transition: transform .2s;
 }
 
@@ -37,27 +37,27 @@ body {
 .level-card h2 {
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    color: #000000;
+    color: #F6B17A;
 }
 
 .level-card p {
     font-size: 1.2em;
     margin-bottom: 1em;
-    color: #000000;
+    color: #F6B17A;
 }
 
 .level-card button {
     padding: 0.5em 1em;
     font-size: 1em;
-    color: #fff;
-    background-color: #9DBC98;
+    color: #F6B17A;
+    background-color: #7077A1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .level-card button:hover {
-    background-color: #638889;
+    background-color: #7077A1;
 }
 
 .level-card img {

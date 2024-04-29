@@ -1,4 +1,4 @@
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,14 +9,14 @@ h1 {
     margin-bottom: 0.5em;
     text-align: center;
     color: #ffffff;
-    text-decoration: underline;
 }
 
-.back_button{
-    width:120px;
+.back_button {
+    width: 120px;
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 0;
+    font-size:2em;
 }
 
 
