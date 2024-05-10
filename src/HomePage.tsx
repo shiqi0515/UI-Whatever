@@ -85,6 +85,8 @@ const HomePage: React.FC = () => {
       <div className="mainPart">
         <span>Smart Programmer</span>
 
+        <div className="buttons">
+
         <button onClick={startGame}>
           <img src={startIcon} alt="Start" />
           {translate("start")}
@@ -104,6 +106,9 @@ const HomePage: React.FC = () => {
           <img src={languageIcon} alt="Language" />
           {translate("languages")}
         </button>
+        
+        </div>
+
         <audio ref={startSoundRef} />
         <audio ref={continueSoundRef} />
         <audio ref={selectLevelSoundRef} />
