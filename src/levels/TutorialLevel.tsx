@@ -8,7 +8,9 @@ import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
 import closeIcon from "../icons/close.png";
 import SettingButton from "../SettingButton";
-import { Joystick } from 'react-joystick-component';
+import { Joystick} from 'react-joystick-component';
+import { IJoystickUpdateEvent } from "react-joystick-component/build/lib/Joystick";
+
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -65,9 +67,13 @@ const TutorialLevel: React.FC = () => {
     }
   };
 
-  const handleMove = () => {
-    console.log('我在移动');
-  };
+
+  const handleMove = (event:IJoystickUpdateEvent) => {
+  //   if (event.x !== null && event.y !== null) {
+  //     console.log(`Moving to X: ${event.x}, Y: ${event.y}`);
+  // }
+  console.log(event);
+};
 
   const handleStop = () => {
     console.log('我停止了');
@@ -124,9 +130,14 @@ const TutorialLevel: React.FC = () => {
         className="target"
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
+
       <div className="rules">{translate("ruleTutorial")}</div>
+
       <div className="joystick_style">
-      <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop}  />
+      <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop} />
+      
+      
+      
       </div>
     </div>
     
