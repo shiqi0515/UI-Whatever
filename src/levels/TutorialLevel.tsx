@@ -8,6 +8,7 @@ import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
 import closeIcon from "../icons/close.png";
 import SettingButton from "../SettingButton";
+import { Joystick } from 'react-joystick-component';
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -64,6 +65,14 @@ const TutorialLevel: React.FC = () => {
     }
   };
 
+  const handleMove = () => {
+    console.log('我在移动');
+  };
+
+  const handleStop = () => {
+    console.log('我停止了');
+  };
+
   useEffect(() => {
     // 检查篮球是否在红色方块上
     const isItemOnTarget =
@@ -116,7 +125,11 @@ const TutorialLevel: React.FC = () => {
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
       <div className="rules">{translate("ruleTutorial")}</div>
+      <div className="joystick_style">
+      <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop}  />
+      </div>
     </div>
+    
   );
 };
 

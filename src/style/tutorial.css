@@ -134,3 +134,20 @@
     z-index: 1; 
   }
 
+.joystick_style {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    background: #ffffff;
+    left: 50px;
+    bottom: 50px;
+}
+
+@media (max-width: 1400px) {
+    .joystick_style {
+        display: block;
+    }
+    
+}
