@@ -85,6 +85,7 @@ const TutorialLevel: React.FC = () => {
     <div className="container">
       <Header title={translate("tutorial")} />
       <SettingButton />
+
       {showModal && <div className="backdrop" />}
       <Modal show={showModal} onHide={handleClose} className="custom-modal">
         <Modal.Header >
@@ -99,14 +100,17 @@ const TutorialLevel: React.FC = () => {
           <Button className="modal_btn" variant="primary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
+
       <Player
         x={playerX}
         y={playerY}
         updatePosition={updatePosition}
         handlePickUpDropItem={handlePickUpDropItem}
       />
+
       <Item x={itemX} y={itemY} />
       <div className="goal" style={{ left: `${goalX}px`, top: `${goalY}px` }} />
+      
       <div
         className="target"
         style={{ left: `${targetX}px`, top: `${targetY}px` }}

@@ -1,12 +1,13 @@
 .footer {
+  display: flex;
+  justify-content: center;
   flex: 1;
   color: aliceblue;
   text-align: center;
   width: 100%;
-
+  flex-shrink: 0;
 }
 
 .footer-content {
-  margin-top: 200px;
   font-size: 16px;
 }
