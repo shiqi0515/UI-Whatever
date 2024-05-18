@@ -1,6 +1,6 @@
 // Player.tsx
 import React, { useState, useEffect, useRef } from "react";
-import playerSprite from "../images/player.jpg";
+import playerSprite from "../images/hamster.png";
 
 interface PlayerProps {
   x: number;
@@ -9,7 +9,7 @@ interface PlayerProps {
   handlePickUpDropItem: () => void;
 }
 
-const frameSize = { width: 58.8, height: 58.8 };
+const frameSize = { width: 76, height: 85 };
 
 const Player: React.FC<PlayerProps> = ({
   x,
@@ -32,22 +32,22 @@ const Player: React.FC<PlayerProps> = ({
       switch (event.key) {
         case "w":
           newY -= 20;
-          newFrameY = 0; // 假设向上行走的帧在第一行
+          newFrameY = 1; // 朝上
           break;
         case "s":
           newY += 20;
-          newFrameY = 0; // 假设向下行走的帧在第一行
+          newFrameY = 0; // 朝下
           break;
         case "a":
           newX -= 20;
-          newFrameY = 1; // 假设向左行走的帧在第二行
+          newFrameY = 3; // 朝左
           break;
         case "d":
           newX += 20;
-          newFrameY = 1; // 假设向右行走的帧在第二行
+          newFrameY = 2; // 朝右
           break;
         case "j":
-          handlePickUpDropItem();
+          handlePickUpDropItem();//
           break;
         // ...
       }
