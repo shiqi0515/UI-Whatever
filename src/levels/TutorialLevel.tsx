@@ -17,14 +17,14 @@ import 'reactjs-popup/dist/index.css';
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
-  const targetX = 1500; // 人物目标区域X坐标
-  const targetY = 600; // 人物目标区域Y坐标
-  const goalX = 1000; // 篮球目标区域X坐标
-  const goalY = 400; // 篮球目标区域Y坐标
-  const [playerX, setPlayerX] = useState(100); // 人物X坐标
-  const [playerY, setPlayerY] = useState(100); // 人物Y坐标
-  const [itemX, setItemX] = useState(200); // 篮球X坐标
-  const [itemY, setItemY] = useState(200); // 篮球Y坐标
+  const targetX = 1920; // 人物目标区域X坐标
+  const targetY = 950; // 人物目标区域Y坐标
+  const goalX = 1710; // 篮球目标区域X坐标
+  const goalY = 420; // 篮球目标区域Y坐标
+  const [playerX, setPlayerX] = useState(1200); // 人物X坐标
+  const [playerY, setPlayerY] = useState(1100); // 人物Y坐标
+  const [itemX, setItemX] = useState(450); // 篮球X坐标
+  const [itemY, setItemY] = useState(850); // 篮球Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
   const winAudio = new Audio(winSound);
@@ -105,7 +105,7 @@ const TutorialLevel: React.FC = () => {
     <>
       <Header title={translate("tutorial")} />
       <SettingButton />
-
+    
       <Modal show={showModal} backdrop="static" dialogClassName="modal-90w" onHide={handleClose} >
       <Modal.Header>
           <div className="modal_title">Success!</div>
