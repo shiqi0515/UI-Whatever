@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Player from "../components/Player";
-import itemSprite from "../images/basketball.png";
+import itemSprite from "../images/coin.png";
 import "../style/tutorial.css";
 import Header from "../Header";
 import { useLanguage } from "../LanguageProvider";
@@ -87,7 +87,7 @@ const TutorialLevel: React.FC = () => {
       Math.abs(itemX - goalX) <= 40 && Math.abs(itemY - goalY) <= 40;
     // 检查玩家是否在绿色方块上
     const isPlayerOnGreen =
-      Math.abs(playerX - targetX) <= 40 && Math.abs(playerY - targetY) <= 40;
+      Math.abs(playerX - targetX) <= 10 && Math.abs(playerY - targetY) <= 10;
     // 如果两个条件都满足，那么游戏获胜
     if (isItemOnTarget && isPlayerOnGreen) {
       setIsWin(true);

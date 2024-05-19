@@ -25,15 +25,14 @@ const SettingButton = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="Setting_btn">
-          <img src={settingIcon} alt="setting" />
+      <Button onClick={handleShow} className="Setting_btn">
+          <img src={settingIcon} alt="setting"/>
       </Button>
-      {show && <div className="backdrop" />}
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} backdrop="static" dialogClassName="modal-90w" onHide={handleClose}>
         <Modal.Header>
-          <Modal.Title>Setting</Modal.Title>
+          <div className="modal_title">Setting</div>
           <Button variant="link" onClick={handleClose} className="btn_close">
-          <img src={closeIcon} alt="Close" /> 
+            <img src={closeIcon} alt="Close"/> 
           </Button>
         </Modal.Header>
         <Modal.Footer>

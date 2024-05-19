@@ -36,7 +36,7 @@
     border: 1px solid black;
     padding: 10px;
 } 
-
+/*  */
 .btn_close{
     position: absolute;
     right: 0;
@@ -52,16 +52,13 @@
     z-index: 1;
 }
 
-.btn_close:hover {
-    font: 100% Consolas, Monaco, monospace;
-    color:white;
-    cursor: pointer;
-    width: 100px;
-    transition: text-shadow 0.3s ease;
+.btn_close{
+    position: absolute;
     border: none;
     background-color:transparent;
     z-index: 1;
 } 
+/* modal */
 .modal-90w{
     max-width: 90vw;    
     height: 90vh;   
@@ -90,7 +87,6 @@
     border: none;
     justify-content: center;
 }
-
 .modal_btn:hover{
     font: 200% Consolas, Monaco, monospace;
     color:white;
@@ -123,12 +119,8 @@
     justify-content: center;
     padding: 20px;
     position: relative;
-    width: 90%;
-    z-index: 3;
-    height:650px;
-    margin-left: 5%;
-    margin-top: -70px;
-} 
+    bottom: 10%;
+}
 
 .joystick_style {
     display: none;

@@ -29,7 +29,6 @@ html,body{
 /* 默认样式 */
 .app-container {
   align-items: center;
-  text-align: center;
   justify-content: center;
   height: 100vh;
   margin: 0;
