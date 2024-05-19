@@ -14,11 +14,12 @@ const Header: FC<{ title: string }> = ({ title }) => {
 
   return (
     <header>
+      <div className="header_container">
       <button className="back_button" onClick={handleBackClick}>
         {translate("back")}
       </button>
       <h1>{title}</h1>
-      
+      </div>
       <div className={`fade-out ${fadeOut ? "active" : ""}`} />
     </header>
   );
