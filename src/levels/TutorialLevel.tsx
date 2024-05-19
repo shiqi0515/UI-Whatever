@@ -20,10 +20,12 @@ const TutorialLevel: React.FC = () => {
   const [itemY, setItemY] = useState(200); // 篮球Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const winAudio = new Audio(winSound);
+
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+  const [showModal, setShowModal] = useState(false);
+
 
   type ItemProps = {
     x: number;
@@ -82,11 +84,10 @@ const TutorialLevel: React.FC = () => {
   }, [itemX, itemY, playerX, playerY]);
 
   return (
-    <div className="container">
-      <Header title={translate("tutorial")} />
-      <Modal show={showModal} onHide={handleClose} className="custom-modal">
-        <Modal.Header >
-          <Modal.Title>Success!</Modal.Title>
+    <>
+      <Modal show={showModal} backdrop="static" dialogClassName="modal-90w" onHide={handleClose} >
+        <Modal.Header>
+          <div className="modal_title">Success!</div>
           <Button variant="link" onClick={handleClose} className="btn_close">
           <img src={closeIcon} alt="Close" /> 
           </Button>
@@ -96,8 +97,10 @@ const TutorialLevel: React.FC = () => {
           <Button className="modal_btn" variant="primary" >Next level</Button>
           <Button className="modal_btn" variant="primary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
-      </Modal>
-      <Player
+      </Modal> 
+      
+      <Header title={translate("tutorial")} /> 
+      /* <Player
         x={playerX}
         y={playerY}
         updatePosition={updatePosition}
@@ -109,8 +112,11 @@ const TutorialLevel: React.FC = () => {
         className="target"
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
-      <div className="rules">{translate("ruleTutorial")}</div>
-    </div>
+      <div className="rules">{translate("ruleTutorial")}</div> 
+
+      
+    
+    </>
   );
 };
 
