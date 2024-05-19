@@ -102,7 +102,7 @@ const TutorialLevel: React.FC = () => {
   }, [itemX, itemY, playerX, playerY]);
 
   return (
-    <>
+    <div className="game-container">
       <Header title={translate("tutorial")} />
       <SettingButton />
     
@@ -148,7 +148,7 @@ const TutorialLevel: React.FC = () => {
       <div className="joystick_style">
       <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop} />
       </div>
-    </>
+    </div>
     
   );
 };
