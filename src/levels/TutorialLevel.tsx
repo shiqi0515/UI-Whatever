@@ -135,11 +135,13 @@ const TutorialLevel: React.FC = () => {
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
 
-      <div className="rules">
-        <Popup trigger={<button className="popup_btn"> Rules</button>} >
-            <div >{translate("ruleTutorial")}</div>
-        </Popup>
+      <div className="popup_container">
+        <Popup trigger={<button className="popup_btn"> Rules</button>} position="bottom center" >
+        <div >{translate("ruleTutorial")}</div>
+      </Popup>  
       </div>
+      
+      
       
       
 
