@@ -25,10 +25,15 @@ html,body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+/* 默认样式 */
+.app-container {
   align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .App-link {
@@ -45,6 +50,13 @@ html,body{
 
   to {
     transform: rotate(360deg);
-  }
+ }
 }
 
+@media (min-width: 768px) {
+  .app-container {
+      flex-direction: row; /* 横向布局 */
+      justify-content: space-around;
+      align-items: center; /* 确保子元素在中间对齐 */
+  }
+}

@@ -126,13 +126,15 @@ function SelectionLevels() {
     name: translate(level.name),
   }));
   return (
-    <div>
+    <div className="main_container">
       <Header title={translate("levels")} />
+
       <div className="levels-container">
         {translatedLevels.map((level) => (
           <LevelCard key={level.id} level={level} />
         ))}
       </div>
+
     </div>
   );
 }

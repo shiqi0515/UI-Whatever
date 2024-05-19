@@ -3,7 +3,17 @@ body {
     background-color: #000000;
     background-size: cover;
 }
+main_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
 
+}
 .levels-container {
     display: flex;
     flex-wrap: wrap;
@@ -65,4 +75,18 @@ body {
     width: auto;
     border-radius: 5px;
     object-fit: cover;
+}
+
+
+@media (max-width: 600px) {
+    .level-card img {
+        display: none;
+    }
+   
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .level-card img {
+        display: none;
+    }
 }

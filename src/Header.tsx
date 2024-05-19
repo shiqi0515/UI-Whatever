@@ -14,6 +14,7 @@ const Header: FC<{ title: string }> = ({ title }) => {
 
   return (
     <header>
+     
       <button className="back_button" onClick={handleBackClick}>
         {translate("back")}
       </button>

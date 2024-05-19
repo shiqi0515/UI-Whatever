@@ -1,8 +1,15 @@
 header {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+}
+
+.back_button {
+    flex: 0;
+    font: bold 200% Consolas, Monaco, monospace;
 }
 
 h1 {
@@ -11,11 +18,6 @@ h1 {
     margin-bottom: 0.5em;
     text-align: center;
     color: #ffffff;
-}
-
-.back_button {
-    flex:0;
-    font: bold 200% Consolas, Monaco, monospace;
 }
 
 .fade-out {

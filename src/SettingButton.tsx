@@ -1,46 +1,55 @@
-import React, { useState } from "react";
-import "./style/settingsButton.css";
+import React, { useState, useEffect } from "react";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import settingIcon from './icons/settings.png';
+import './style/settingButton.css';
+import closeIcon from './icons/close.png';
 
-function SettingButton() {
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+const SettingButton = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const handleBackClick = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      window.history.back();
+    }, 800);
+  };
+  const handleSelectLevel = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      window.location.href = "/selectionLevels";
+    }, 800);
+  };
 
   return (
-    <div className="level-card">
-      <button
-        className="settings-button"
-        onClick={() => setIsSettingsOpen(true)}
-      >
-        Settings
-      </button>
-
-      {isSettingsOpen && (
-        <div className="settings-modal">
-          <div
-            className="settings-modal-background"
-            onClick={() => setIsSettingsOpen(false)}
-          />
-
-          <div className="settings-modal-content">
-            <button onClick={handleFirstButton}>First Button</button>
-            <button onClick={handleSecondButton}>Second Button</button>
-            <button onClick={handleThirdButton}>Third Button</button>
-          </div>
-        </div>
-      )}
-
-      {/* Other content... */}
-    </div>
+    <>
+      <Button variant="primary" onClick={handleShow} className="Setting_btn">
+          <img src={settingIcon} alt="setting" />
+      </Button>
+      {show && <div className="backdrop" />}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Setting</Modal.Title>
+          <Button variant="link" onClick={handleClose} className="btn_close">
+          <img src={closeIcon} alt="Close" /> 
+          </Button>
+        </Modal.Header>
+        <Modal.Footer>
+          <Button className="modal_btn" variant="primary" onClick={handleClose}>
+            Game Continue
+          </Button>
+          <Button className="modal_btn" variant="primary" onClick={handleSelectLevel}>
+            Select Level
+          </Button>
+          <Button className="modal_btn" variant="primary" onClick={handleBackClick}>
+            Back to Main Menu
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
-function handleFirstButton() {
-  // Implement the functionality for the first button here
-}
-
-function handleSecondButton() {
-  // Implement the functionality for the second button here
-}
-
-function handleThirdButton() {
-  // Implement the functionality for the third button here
-}
+export default SettingButton;

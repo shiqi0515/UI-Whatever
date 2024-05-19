@@ -8,6 +8,7 @@ import TutorialLevel from "./levels/TutorialLevel";
 
 const App: React.FC = () => {
   return (
+    <div className="app-container"> 
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/tutorialLevel" element={<TutorialLevel />} />
       </Routes>
     </Router>
+    </div>
   );
 };
 
