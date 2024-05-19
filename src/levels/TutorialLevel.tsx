@@ -11,6 +11,9 @@ import SettingButton from "../SettingButton";
 import { Joystick} from 'react-joystick-component';
 import { IJoystickUpdateEvent } from "react-joystick-component/build/lib/Joystick";
 
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -132,7 +135,13 @@ const TutorialLevel: React.FC = () => {
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
 
-      <div className="rules">{translate("ruleTutorial")}</div>
+      <div className="rules">
+        <Popup trigger={<button className="popup_btn"> Rules</button>} >
+            <div >{translate("ruleTutorial")}</div>
+        </Popup>
+      </div>
+      
+      
 
       <div className="joystick_style">
       <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop} />

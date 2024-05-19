@@ -30,12 +30,16 @@
     position: relative;
     top: 500px;
     left: 200px;
-    width: 200px;
     padding-bottom: 20px;
-    background-color: white;
-    border: 1px solid black;
     padding: 10px;
+    font: 100% Consolas, Monaco, monospace;
 } 
+.popup_btn:hover{
+    font: 100% Consolas, Monaco, monospace;
+    border: none;
+}
+
+
 /*  */
 .btn_close{
     position: absolute;
