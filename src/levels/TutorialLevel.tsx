@@ -18,10 +18,10 @@ const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
-  const targetX = (1500 / screenWidth) * 1000; // 人物目标区域X坐标
-  const targetY = (600 / screenHeight) * 1000; // 人物目标区域Y坐标
-  const goalX = (1000 / screenWidth) * 1000; // 篮球目标区域X坐标
-  const goalY = (400 / screenHeight) * 1000; // 篮球目标区域Y坐标
+  const targetX = (2700 / screenWidth) * 1000; // 人物目标区域X坐标
+  const targetY = (320 / screenHeight) * 1000; // 人物目标区域Y坐标
+  const goalX = (1680 / screenWidth) * 1000; // 篮球目标区域X坐标
+  const goalY = (700 / screenHeight) * 1000; // 篮球目标区域Y坐标
   const [playerX, setPlayerX] = useState((100 / screenWidth) * 1000); // 人物X坐标
   const [playerY, setPlayerY] = useState((100 / screenHeight) * 1000); // 人物Y坐标
   const [itemX, setItemX] = useState((200 / screenWidth) * 1000); // 篮球X坐标
@@ -189,6 +189,19 @@ const TutorialLevel: React.FC = () => {
           move={handleMove}
           stop={handleStop}
         />
+      </div>
+      <div
+        style={{
+          position: "fixed",
+          bottom: "10px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "24px",
+          fontWeight: "bold",
+          color: "white",
+        }}
+      >
+        Count down：{Math.floor(countdown / 60)} Min {countdown % 60} Sec
       </div>
     </div>
   );
