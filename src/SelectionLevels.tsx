@@ -2,6 +2,7 @@ import React from "react";
 import "./style/selectionLevels.css";
 import { useLanguage } from "./LanguageProvider";
 import Header from "./Header";
+import image from "./images/level_image.webp";
 
 interface Level {
   id: number;
@@ -19,73 +20,73 @@ const levels: Level[] = [
     id: 0,
     name: "tutorial",
     difficulty: "0",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 1,
     name: "if",
     difficulty: "1",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 2,
     name: "while",
     difficulty: "1",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 3,
     name: "for_loop",
     difficulty: "2",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 4,
     name: "switch",
     difficulty: "2",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 5,
     name: "linear_list",
     difficulty: "3",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 6,
     name: "array",
     difficulty: "3",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 7,
     name: "linked_list",
     difficulty: "4",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 8,
     name: "stack",
     difficulty: "4",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 9,
     name: "queue",
     difficulty: "4",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 10,
     name: "tree",
     difficulty: "5",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
   {
     id: 11,
     name: "graph",
     difficulty: "5",
-    image: "https://via.placeholder.com/300",
+    image: image,
   },
 ];
 
@@ -134,7 +135,6 @@ function SelectionLevels() {
           <LevelCard key={level.id} level={level} />
         ))}
       </div>
-
     </div>
   );
 }
