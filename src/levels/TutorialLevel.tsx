@@ -18,10 +18,10 @@ const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
-  const targetX = (2700 / screenWidth) * 1000; // 人物目标区域X坐标
-  const targetY = (320 / screenHeight) * 1000; // 人物目标区域Y坐标
-  const goalX = (1680 / screenWidth) * 1000; // 篮球目标区域X坐标
-  const goalY = (700 / screenHeight) * 1000; // 篮球目标区域Y坐标
+  const targetX = (2700 / screenWidth) * 1820; // 人物目标区域X坐标
+  const targetY = (320 / screenHeight) * 3900; // 人物目标区域Y坐标
+  const goalX = (1680 / screenWidth) * 2600; // 篮球目标区域X坐标
+  const goalY = (700 / screenHeight) * 800; // 篮球目标区域Y坐标
   const [playerX, setPlayerX] = useState((100 / screenWidth) * 1000); // 人物X坐标
   const [playerY, setPlayerY] = useState((100 / screenHeight) * 1000); // 人物Y坐标
   const [itemX, setItemX] = useState((200 / screenWidth) * 1000); // 篮球X坐标
