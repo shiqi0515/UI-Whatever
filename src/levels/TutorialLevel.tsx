@@ -8,12 +8,11 @@ import { useLanguage } from "../LanguageProvider";
 import winSound from "../sounds/success.mp3";
 import closeIcon from "../icons/close.png";
 import SettingButton from "../SettingButton";
-import { Joystick} from 'react-joystick-component';
+import { Joystick } from "react-joystick-component";
 import { IJoystickUpdateEvent } from "react-joystick-component/build/lib/Joystick";
 
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
-
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
@@ -32,7 +31,6 @@ const TutorialLevel: React.FC = () => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
   const [showModal, setShowModal] = useState(false);
-
 
   type ItemProps = {
     x: number;
@@ -72,16 +70,15 @@ const TutorialLevel: React.FC = () => {
     }
   };
 
-
-  const handleMove = (event:IJoystickUpdateEvent) => {
-  //   if (event.x !== null && event.y !== null) {
-  //     console.log(`Moving to X: ${event.x}, Y: ${event.y}`);
-  // }
-  console.log(event);
-};
+  const handleMove = (event: IJoystickUpdateEvent) => {
+    //   if (event.x !== null && event.y !== null) {
+    //     console.log(`Moving to X: ${event.x}, Y: ${event.y}`);
+    // }
+    console.log(event);
+  };
 
   const handleStop = () => {
-    console.log('我停止了');
+    console.log("我停止了");
   };
 
   useEffect(() => {
@@ -105,18 +102,27 @@ const TutorialLevel: React.FC = () => {
     <div className="game-container">
       <Header title={translate("tutorial")} />
       <SettingButton />
-    
-      <Modal show={showModal} backdrop="static" dialogClassName="modal-90w" onHide={handleClose} >
-      <Modal.Header>
+
+      <Modal
+        show={showModal}
+        backdrop="static"
+        dialogClassName="modal-90w"
+        onHide={handleClose}
+      >
+        <Modal.Header>
           <div className="modal_title">Success!</div>
           <Button variant="link" onClick={handleClose} className="btn_close">
-          <img src={closeIcon} alt="Close" /> 
+            <img src={closeIcon} alt="Close" />
           </Button>
         </Modal.Header>
         <Modal.Body>Congratulations!</Modal.Body>
         <Modal.Footer>
-          <Button className="modal_btn" variant="primary" >Next level</Button>
-          <Button className="modal_btn" variant="primary" onClick={handleClose}>Close</Button>
+          <Button className="modal_btn" variant="primary">
+            Next level
+          </Button>
+          <Button className="modal_btn" variant="primary" onClick={handleClose}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
 
@@ -129,27 +135,31 @@ const TutorialLevel: React.FC = () => {
 
       <Item x={itemX} y={itemY} />
       <div className="goal" style={{ left: `${goalX}px`, top: `${goalY}px` }} />
-      
+
       <div
         className="target"
         style={{ left: `${targetX}px`, top: `${targetY}px` }}
       />
 
       <div className="popup_container">
-        <Popup trigger={<button className="popup_btn"> Rules</button>} position="bottom center" >
-        <div >{translate("ruleTutorial")}</div>
-      </Popup>  
+        <Popup
+          trigger={<button className="popup_btn"> Rules</button>}
+          position="bottom center"
+        >
+          <div>{translate("ruleTutorial")}</div>
+        </Popup>
       </div>
-      
-      
-      
-      
 
       <div className="joystick_style">
-      <Joystick size={100} baseColor="white" stickColor="black" move={handleMove} stop={handleStop} />
+        <Joystick
+          size={100}
+          baseColor="white"
+          stickColor="black"
+          move={handleMove}
+          stop={handleStop}
+        />
       </div>
     </div>
-    
   );
 };
 
