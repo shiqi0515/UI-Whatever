@@ -98,6 +98,28 @@ const TutorialLevel: React.FC = () => {
     if (isWin) {
       winAudio.play(); // 当 isWin 变为 true 时，播放音频
     }
+
+    const timer = setInterval(() => {
+      setCountdown((prevCountdown) =>
+        prevCountdown > 0 ? prevCountdown - 1 : 0
+      );
+    }, 1000); // 每秒更新一次倒计时
+
+    if (!showModal && timer === null) {
+      // 当菜单被关闭且计时器未启动时，开始倒计时
+      const newTimer = setInterval(() => {
+        setCountdown((prevCountdown) =>
+          prevCountdown > 0 ? prevCountdown - 1 : 0
+        );
+      }, 1000); // 每秒更新一次倒计时
+      setTimer(newTimer);
+    } else if (showModal && timer !== null) {
+      // 当菜单被打开且计时器已启动时，停止倒计时
+      clearInterval(timer);
+      setTimer(null);
+    }
+
+    return () => clearInterval(timer); // 组件卸载时清除计时器
   }, [itemX, itemY, playerX, playerY, isWin]);
 
   return (
