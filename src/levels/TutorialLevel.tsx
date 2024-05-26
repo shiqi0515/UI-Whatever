@@ -29,6 +29,8 @@ const TutorialLevel: React.FC = () => {
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
   const winAudio = new Audio(winSound);
+  const [countdown, setCountdown] = useState(5 * 60); // 初始化倒计时为5分钟
+  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null); // 用于存储计时器的状态
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
