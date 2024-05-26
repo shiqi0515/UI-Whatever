@@ -98,7 +98,7 @@ const TutorialLevel: React.FC = () => {
     if (isWin) {
       winAudio.play(); // 当 isWin 变为 true 时，播放音频
     }
-  }, [itemX, itemY, playerX, playerY]);
+  }, [itemX, itemY, playerX, playerY, isWin]);
 
   return (
     <div className="game-container">
