@@ -30,7 +30,7 @@ const translations: Translations = {
     tree: "Tree",
     graph: "Graph",
     ruleTutorial:
-      "Rules of the game: Drop the basketball to the red square, then move the player to the green square to win! Use WSAD to move the player and J to drap and drop the basketball.",
+      "Rules of the game: Put the coin into the red box, then move the hamster to the yellow box to win! Use WSAD to move the hamster and press the J key to drag the coin.",
     // other translations...
   },
 
@@ -55,7 +55,7 @@ const translations: Translations = {
     tree: "树",
     graph: "图",
     ruleTutorial:
-      "游戏规则：将篮球放到红色方块上，然后将玩家移动到绿色方块上即可获胜！使用WSAD移动玩家，按J键拖动篮球。",
+      "游戏规则：将硬币放到红色框里，然后将仓鼠移动到黄色框里上即可获胜！使用WSAD移动仓鼠，按J键拖动硬币。",
   },
 
   sv: {
@@ -78,7 +78,7 @@ const translations: Translations = {
     tree: "Träd",
     graph: "Graf",
     ruleTutorial:
-      "Spelets regler: Släpp basketbollen på den röda rutan, flytta sedan spelaren till den gröna rutan för att vinna! Använd WSAD för att flytta spelaren och J för att släppa och släppa basketbollen.",
+      "Spelets regler: Lägg myntet i den röda rutan, flytta sedan hamstern till den gula rutan för att vinna! Använd WSAD för att flytta hamstern och tryck på J-tangenten för att dra myntet.",
   },
 };
 
