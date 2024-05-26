@@ -18,14 +18,17 @@ const TutorialLevel: React.FC = () => {
   const { translate } = useLanguage();
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
-  const targetX = (4900 / screenWidth) * 1000; // 人物目标区域X坐标
-  const targetY = (1230 / screenHeight) * 1000; // 人物目标区域Y坐标
-  const goalX = (4370 / screenWidth) * 1000; // 篮球目标区域X坐标
-  const goalY = (560 / screenHeight) * 1000; // 篮球目标区域Y坐标
-  const [playerX, setPlayerX] = useState((3000 / screenWidth) * 1000); // 人物X坐标
-  const [playerY, setPlayerY] = useState((1400 / screenHeight) * 1000); // 人物Y坐标
-  const [itemX, setItemX] = useState((3200 / screenWidth) * 1000); // 篮球X坐标
-  const [itemY, setItemY] = useState((1450 / screenHeight) * 1000); // 篮球Y坐标
+  //console.log(screenWidth, screenHeight);
+  const targetX = (1914 / 2560) * screenWidth; // 人物目标区域X坐标
+  const targetY = (942 /1305 ) * screenHeight; // 人物目标区域Y坐标
+  //console.log(targetX, targetY);
+  const goalX = (1707 /2560 ) *screenWidth ; // 篮球目标区域X坐标
+  const goalY = (429 /1305 ) * screenHeight; // 篮球目标区域Y坐标
+  //console.log(goalX, goalY);
+  const [playerX, setPlayerX] = useState((1171 /2560 ) * screenWidth); // 人物X坐标
+  const [playerY, setPlayerY] = useState((1072 /1305 ) * screenHeight); // 人物Y坐标
+  const [itemX, setItemX] = useState((1350 /2560 ) * screenWidth); // 篮球X坐标
+  const [itemY, setItemY] = useState((1111 /1305 ) * screenHeight); // 篮球Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
   const winAudio = new Audio(winSound);
@@ -190,6 +193,7 @@ const TutorialLevel: React.FC = () => {
           stop={handleStop}
         />
       </div>
+
       <div
         style={{
           position: "fixed",
