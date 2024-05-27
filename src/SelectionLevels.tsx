@@ -106,6 +106,10 @@ const LevelCard: React.FC<LevelCardProps> = ({ level }) => {
   const handlePlayClick = () => {
     // Handle play button click here
     console.log(`Play button clicked for level ${level.id}`);
+    if (level.id === 0) {
+      window.location.href = "/tutorialLevel";
+    }
+
   };
   const { translate } = useLanguage(); // Use the hook here
 
