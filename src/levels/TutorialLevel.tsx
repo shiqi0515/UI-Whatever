@@ -190,6 +190,7 @@ const TutorialLevel: React.FC = () => {
           stop={handleStop}
         />
       </div>
+
       <div
         style={{
           position: "fixed",
