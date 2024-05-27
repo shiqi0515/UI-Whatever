@@ -24,8 +24,8 @@ const TutorialLevel: React.FC = () => {
   const goalY = (600 / screenHeight) * 1000; // 篮球目标区域Y坐标
   const [playerX, setPlayerX] = useState((1680 / screenWidth) * 1000); // 人物X坐标
   const [playerY, setPlayerY] = useState((700 / screenHeight) * 1000); // 人物Y坐标
-  const [itemX, setItemX] = useState((1000 / screenWidth) * 1000); // 篮球X坐标
-  const [itemY, setItemY] = useState((500 / screenHeight) * 1000); // 篮球Y坐标
+  const [itemX, setItemX] = useState((1780 / screenWidth) * 1000); // 篮球X坐标
+  const [itemY, setItemY] = useState((350 / screenHeight) * 1000); // 篮球Y坐标
   const [carryingItem, setCarryingItem] = useState(false); // 玩家是否正在携带物品
   const [isWin, setIsWin] = useState(false);
   const winAudio = new Audio(winSound);
