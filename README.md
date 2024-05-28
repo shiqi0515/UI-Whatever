@@ -1,24 +1,28 @@
-#UI-WHATEVER
+# UI-WHATEVER
 
-#Xiki Shu & Meilin Zhu
+### Team member
+Xiki Shu & Meilin Zhu
 
-#An educational game for programming, help the children to learn basic knowledge about data structure while playing a game.
+### General description
+ An educational game for programming, help the children to learn basic knowledge about data structure while playing a game.
 
-#We chose React for our project due to its critical importance and widespread popularity in the industry. Besides, React has a large community with plenty of resources, components, and libraries available to help build the project.
+### Reason for platform
+ We chose React for our project due to its critical importance and widespread popularity in the industry. Besides, React has a large community with plenty of resources, components, and libraries available to help build the project.
 
-#How to run the application
+### How to run the application
 
-##1.Prerequisites
+#### 1.Prerequisites
 
 Ensure you have Node.js and npm (Node Package Manager) installed. You can download them from nodejs.org.
 
 
-##2.Open your terminal or command prompt
+#### 2.Open your terminal or command prompt
 
 run the following command
 
- npm install 
+ #### npm install 
 
- npm start
+ #### npm start
 
-#The concepts like JSX,hooks and state management could be hard for beginners.
+### Challenges for the platform and langugae
+ The concepts like JSX,hooks and state management could be hard for beginners.
